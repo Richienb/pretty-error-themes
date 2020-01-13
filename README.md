@@ -1,41 +1,28 @@
-# The module [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/the-module/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/the-module)
+# pretty-error Themes [![Travis CI Build Status](https://img.shields.io/travis/com/Richienb/pretty-error-themes/master.svg?style=for-the-badge)](https://travis-ci.com/Richienb/pretty-error-themes)
 
-My awesome module.
+Themes for [pretty-error](https://github.com/AriaMinaei/pretty-error).
 
-[![NPM Badge](https://nodei.co/npm/the-module.png)](https://npmjs.com/package/the-module)
+[![NPM Badge](https://nodei.co/npm/pretty-error-themes.png)](https://npmjs.com/package/pretty-error-themes)
 
 ## Install
 
 ```sh
-npm install the-module
+npm install pretty-error-themes
 ```
 
 ## Usage
 
 ```js
-const theModule = require("the-module");
-
-theModule("unicorns");
-//=> 'unicorns & rainbows'
+const pe = require('pretty-error').start()
+pe.appendStyle(require("pretty-error-themes/material"))
 ```
 
-## API
+## Themes
 
-### theModule(input, options?)
+You are able to import the following themes:
 
-#### input
+- `material`
 
-Type: `string`
+## Add your own theme
 
-Lorem ipsum.
-
-#### options
-
-Type: `object`
-
-##### postfix
-
-Type: `string`\
-Default: `rainbows`
-
-Lorem ipsum.
+See the [Contribution guide](https://github.com/Richienb/pretty-error-themes/blob/master/.github/CONTRIBUTING.md).

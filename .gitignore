@@ -1,3 +1,7 @@
+# Automatically generated files
+/*.json
+!/index.json
+
 # Visual Studio Code
 
 .vscode/*

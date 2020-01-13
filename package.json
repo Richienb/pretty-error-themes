@@ -1,33 +1,98 @@
 {
-    "name": "the-module",
-    "version": "0.0.0",
-    "description": "My awesome module.",
-    "repository": "https://github.com/Richienb/the-module.git",
-    "author": "Richie Bendall <richiebendall@gmail.com>",
-    "license": "MIT",
-    "main": "index.js",
-    "files": [
-        "index.js",
-        "index.d.ts"
-    ],
-    "engines": {
-        "node": ">=8"
-    },
-    "scripts": {
-        "lint": "xo",
-        "test": "yarn lint && ava"
-    },
-    "keywords": [],
-    "dependencies": {},
-    "devDependencies": {
-        "ava": "^2.4.0",
-        "eslint-config-richienb": "^0.3.0",
-        "xo": "^0.25.3"
-    },
-    "resolutions": {
-        "eslint": "^6.8.0"
-    },
-    "xo": {
-        "extends": "richienb/node"
-    }
+	"name": "pretty-error-themes",
+	"version": "0.0.0",
+	"description": "My awesome module.",
+	"repository": "https://github.com/Richienb/pretty-error-themes.git",
+	"author": "Richie Bendall <richiebendall@gmail.com>",
+	"license": "MIT",
+	"main": "index.json",
+	"files": [
+		"/*.json"
+	],
+	"scripts": {
+		"lint": "xo && stylelint themes/*.sass",
+		"test": "yarn lint && node scripts/build && ava",
+		"build": "node scripts/build",
+		"prepublishOnly": "node scripts/build",
+		"demo": "node scripts/build && node scripts/demo"
+	},
+	"keywords": [
+		"pretty",
+		"error",
+		"theme",
+		"themes",
+		"renderkid",
+		"css",
+		"sass",
+		"style",
+		"styles"
+	],
+	"dependencies": {},
+	"devDependencies": {
+		"ava": "^2.4.0",
+		"css-treeify": "^0.1.0",
+		"eslint-config-richienb": "^0.3.0",
+		"fs-extra": "^8.1.0",
+		"globby": "^11.0.0",
+		"import-modules": "^2.0.0",
+		"lodash": "^4.17.15",
+		"meow": "^6.0.0",
+		"path-extra": "^4.3.0",
+		"pretty-error": "^2.1.1",
+		"sassp": "^1.0.0",
+		"stylelint": "^13.0.0",
+		"stylelint-config-recommended-scss": "^4.1.0",
+		"stylelint-scss": "^3.13.0",
+		"xo": "^0.25.3"
+	},
+	"peerDependencies": {
+		"pretty-error": "*"
+	},
+	"resolutions": {
+		"eslint": "^6.8.0"
+	},
+	"xo": {
+		"extends": "richienb/node"
+	},
+	"stylelint": {
+		"extends": "stylelint-config-recommended-scss",
+		"plugins": [
+			"stylelint-scss"
+		],
+		"rules": {
+			"selector-type-no-unknown": [
+				true,
+				{
+					"ignoreTypes": [
+						"pretty-error",
+						"header",
+						"title",
+						"kind",
+						"colon",
+						"message",
+						"trace",
+						"item",
+						"pointer",
+						"file",
+						"line",
+						"what",
+						"footer",
+						"addr"
+					]
+				}
+			],
+			"property-no-unknown": [
+				true,
+				{
+					"ignoreProperties": [
+						"marginTop",
+						"marginBottom",
+						"marginLeft",
+						"marginRight",
+						"bullet"
+					]
+				}
+			]
+		}
+	}
 }
